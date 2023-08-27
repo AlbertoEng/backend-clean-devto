@@ -19,8 +19,12 @@ async function create( userData ){
 }
 
 // GET /user/:id
-async function getById(){
-
+async function getById( id ){
+    // validar id antes de consultarlo en base de datos
+    if( !mongoose.isValidObjectId(id) ) throw new createError(404, "invalid id");
+    const user = await User.findById( id );
+    if( !user ) throw new createError(404, "user not found");
+     
 }
 
 
