@@ -25,12 +25,10 @@ const postsSchema = new mongoose.Schema({
     },
     created_at: {
         type: Date,
-        required: true,
         default: new Date()
     },
     updated_at: {
         type: Date,
-        required: true,
         default: new Date()
     }
 })
