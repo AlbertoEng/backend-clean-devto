@@ -1,6 +1,5 @@
 const express = require('express')
 const users = require("../usecases/users.usecase")
-const auth = require("../middlewares/auth.middleware")
 const router = express.Router()
 
 // Obtener informacion de un usuario por id 
