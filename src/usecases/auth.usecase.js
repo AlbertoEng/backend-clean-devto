@@ -13,7 +13,6 @@ async function login(email, password) {
   if (!isValidPassword) {
     throw new createError(401, "Invalid data");
   }
-  console.log('pase aqui')
   // generar jwt
   return jwt.sign({ id: user._id });
 }
