@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const User = require('../models/User');
+const User = require('../models/users.model');
 const createError = require('http-errors');
 const bcrypt = require('../lib/bcrypt');
 
