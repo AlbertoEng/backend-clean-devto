@@ -16,7 +16,7 @@ async function getAll(titleFilter, user) {
     filters.user = user;
   }
 
-  return Practice.find(filters).populate("user");
+  return Post.find(filters).populate("user");
 }
 
 

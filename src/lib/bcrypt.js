@@ -1,5 +1,4 @@
 /* iniciar */ 
-
 const bcryptjs = require("bcryptjs");
 
 const saltRounds = 10;

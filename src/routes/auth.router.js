@@ -16,7 +16,8 @@ router.post('/login', async (request, response) => {
             }
         })
     } catch (error) {
-        response.status(500)
+        const status = error.name === "ValidationError" ? 404 : 500
+        response.status(status)
         response.json({
             message: "something went wrong", 
             error: error.message

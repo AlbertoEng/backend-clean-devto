@@ -9,7 +9,7 @@ router.get('/:id', async (request, response) => {
         const user = await users.getById(id)
     
         response.json({
-            message: `User: ${user.firstName} id: ${id}`,
+            message: `User: ${user.name} id: ${id}`,
             data: { user }
         })
     } catch (error) {
@@ -23,6 +23,7 @@ router.get('/:id', async (request, response) => {
 // Registrar un nuevo usuario
 router.post('/', async (request, response) => {
     try {
+        console.log('pase aqui')
         const userData = request.body
         const newUser = await users.create(userData)
     

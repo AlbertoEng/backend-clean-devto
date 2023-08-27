@@ -24,7 +24,7 @@ async function getById( id ){
     if( !mongoose.isValidObjectId(id) ) throw new createError(404, "invalid id");
     const user = await User.findById( id );
     if( !user ) throw new createError(404, "user not found");
-     
+     return user;
 }
 
 
