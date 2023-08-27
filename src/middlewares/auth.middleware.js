@@ -1,5 +1,4 @@
 /* inicio */
-
 const createError = require("http-errors");
 const jwt = require("../lib/jwt");
 
