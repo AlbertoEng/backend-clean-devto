@@ -8,9 +8,6 @@ router.post("/", auth, async (request, response) => {
     try {
       const postData = request.body;
       const newUser = await posts.create(postData);
-      
-      console.log('pase aqui')
-
       response.status(201);
       response.json({
         message: "Post created",
@@ -82,6 +79,27 @@ router.post("/", auth, async (request, response) => {
         message: "Post deleted",
         data: {
           post: postDeleted,
+        },
+      });
+    } catch (error) {
+      response.status(error.status || 500);
+      response.json({
+        message: "something went wrong",
+        error: error.message,
+      });
+    }
+  });
+
+  router.get("/:id", auth, async (request, response) => {
+    try {
+      const { id } = request.params;
+  
+      const post = await posts.getById(id);
+  
+      response.json({
+        message: "ok",
+        data: {
+          post
         },
       });
     } catch (error) {
