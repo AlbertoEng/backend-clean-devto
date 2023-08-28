@@ -23,6 +23,10 @@ const postsSchema = new mongoose.Schema({
         trim: true,
         ref: "User"
     },
+    tags: {
+        type: Array,
+        default: []
+    },
     created_at: {
         type: Date,
         default: new Date()

@@ -7,12 +7,11 @@ const router = express.Router()
 router.post('/login', async (request, response) => {
     try {
         const {email, password} = request.body
-        const token = await authUsecase.login(email, password)
-
+        const result = await authUsecase.login(email, password)
         response.json({
             message: "logged in",
             data: {
-                token
+                ...result
             }
         })
     } catch (error) {

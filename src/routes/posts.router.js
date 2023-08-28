@@ -8,7 +8,9 @@ router.post("/", auth, async (request, response) => {
     try {
       const postData = request.body;
       const newUser = await posts.create(postData);
-  
+      
+      console.log('pase aqui')
+
       response.status(201);
       response.json({
         message: "Post created",
