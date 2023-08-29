@@ -22,7 +22,7 @@ To use this software follow these instrucctions:
 
 
 
-## ENPOINTS
+## ENDPOINTS
 
 without authorization:
 
